@@ -1,68 +1,71 @@
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-      button {
-        width: 80%;
-        height: 30%;
-        padding: 10px;
-        margin: 4px 2px;
-        font-size: 20px;
-      }
-      .centerButton {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        position: absolute;
-        top: 70%;
-        left: 50%;
-        -ms-transform: translate(-50%, -5%);
-        transform: translate(-50%, -5%);
-        text-align: center;
-      }
-      .centerTop {
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        position: absolute;
-        top: 11%;
-        left: 50%;
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        text-align: center;
-        background-color: blue;
-      }
-      .centerToken {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        position: absolute;
-        top: 35%;
-        left: 50%;
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        text-align: center;
-      }
-    </style>
-    <title>Random token</title>
-  </head>
-  <body style="background: linear-gradient(#00400e, #1e1e1e)">
-    <div class="centerTop">
-      <img
-        src="/storage/emulated/0/Download/randomToken/top.png"
-        style="width: 100%"
-      />
-    </div>
-    <div class="centerButton">
-      <button id="remplissage" onclick="fillImages()">Remplir</button>
-      <button disabled id="pioche" onclick="getRandomImage()">Piocher</button>
-      <button disabled id="suivant" onclick="allowNext()">
-        Joueur suivant
-      </button>
-    </div>
-    <div class="centerToken">
-      <span id="result"></span>
-    </div>
-  </body>
-  <script src="got3.js" />
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<style>
+		button {
+			width: 80%;
+			height: 30%;
+			padding: 10px;
+			margin: 4px 2px;
+			font-size: 20px;
+		}
+
+		.centerButton {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			position: absolute;
+			top: 70%;
+			left: 50%;
+			-ms-transform: translate(-50%, -5%);
+			transform: translate(-50%, -5%);
+			text-align: center;
+		}
+
+		.centerTop {
+			width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+			position: absolute;
+			top: 11%;
+			left: 50%;
+			-ms-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+			text-align: center;
+			background-color: blue;
+		}
+
+		.centerToken {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			position: absolute;
+			top: 35%;
+			left: 50%;
+			-ms-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+			text-align: center;
+		}
+	</style>
+	<title>Random token</title>
+</head>
+
+<body style="background: linear-gradient(#00400e, #1e1e1e)">
+	<div class="centerTop">
+		<img src="storage/emulated/0/Download/randomToken/top.png" style="width: 100%" />
+	</div>
+	<div class="centerButton">
+		<button id="remplissage" onclick="fillImages()">Remplir</button>
+		<button disabled id="pioche" onclick="getRandomImage()">Piocher</button>
+		<button disabled id="suivant" onclick="allowNext()">
+			Joueur suivant
+		</button>
+	</div>
+	<div class="centerToken">
+		<span id="result"></span>
+	</div>
+</body>
+<script src="got3.js" />
+
 </html>

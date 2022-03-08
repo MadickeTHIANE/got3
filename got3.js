@@ -1,6 +1,6 @@
 var randomImage = [];
 //const path = "";
-const path = "/storage/emulated/0/Download/randomToken/";
+const path = "storage/emulated/0/Download/randomToken/";
 var tour = 0;
 function fillImages() {
   randomImage = [
