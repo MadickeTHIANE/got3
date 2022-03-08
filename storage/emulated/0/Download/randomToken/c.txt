@@ -1,0 +1,2 @@
+Energy-Exhaust
+Counter: Play Your Leader Card is green : If the Battle Card being played has an energy cost of 4 or less, it is placed in its owner's Drop Area instead of being played, then choose up to 1 of your blue or green energy and switch it to Active Mode.

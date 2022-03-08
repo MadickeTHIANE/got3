@@ -1,0 +1,3 @@
+Critical
+Barrier (This card can't be chosen by the skills of your opponent's cards)
+Activate: Main Choose up to 1 of the opponent's Battle Card with an energy cost equal or less than your energy and KO it. Then, for the duration of the game, negate this skill.

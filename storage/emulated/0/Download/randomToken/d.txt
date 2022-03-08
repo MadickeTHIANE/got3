@@ -1,0 +1,2 @@
+Permanent If your Leader Card is red, this card can attack Battle Cards that are in Active Mode.
+Auto Once per turn When this card attacks a Battle Card, switch this card to Active Mode and this card gains +10000 power for the duration of the battle.
