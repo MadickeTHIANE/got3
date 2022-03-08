@@ -1,15 +1,17 @@
 <html>
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<style>
-			button {
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		button {
 			width: 80%;
 			height: 30%;
 			padding: 10px;
 			margin: 4px 2px;
 			font-size: 20px;
-			}
-			.centerButton {
+		}
+
+		.centerButton {
 			display: block;
 			margin-left: auto;
 			margin-right: auto;
@@ -19,106 +21,111 @@
 			-ms-transform: translate(-50%, -5%);
 			transform: translate(-50%, -5%);
 			text-align: center;
-			}
-			.centerTop {
+		}
+
+		.centerTop {
 			width: 100%;
 			margin-left: auto;
 			margin-right: auto;
-			position : absolute;
-			top:11%;
+			position: absolute;
+			top: 11%;
 			left: 50%;
 			-ms-transform: translate(-50%, -50%);
 			transform: translate(-50%, -50%);
 			text-align: center;
-			background-color:blue;
-			}
-			.centerToken {
+			background-color: blue;
+		}
+
+		.centerToken {
 			display: block;
 			margin-left: auto;
 			margin-right: auto;
-			position : absolute;
-			top:35%;
+			position: absolute;
+			top: 35%;
 			left: 50%;
 			-ms-transform: translate(-50%, -50%);
 			transform: translate(-50%, -50%);
 			text-align: center;
-			}
-		</style>
-		<title> Random token </title>
-	</head>
-	<script>
-		var randomImage = []
-		//const path = "";
-		const path = "/storage/emulated/0/Download/randomToken/";
-		var tour = 0;
-		function fillImages() {
-			randomImage = [ [path.concat("1.txt"), path.concat("1.png")],
-							[path.concat("1.txt"), path.concat("1.png")],
-							[path.concat("2.txt"), path.concat("2.png")],
-							[path.concat("2.txt"), path.concat("2.png")],
-							[path.concat("3.txt"), path.concat("3.png")],
-							[path.concat("3.txt"), path.concat("3.png")],
-							[path.concat("4.txt"), path.concat("4.png")],
-							[path.concat("4.txt"), path.concat("4.png")],
-							[path.concat("5.txt"), path.concat("5.png")],
-							[path.concat("6.txt"), path.concat("6.png")],
-							[path.concat("7.txt"), path.concat("7.png")],
-							[path.concat("7.txt"), path.concat("7.png")] ];
-			const boutonPioche = document.getElementById("pioche");
-			if (tour < 2 ) {boutonPioche.disabled = false;}
-			const boutonRemp = document.getElementById("remplissage");
-			boutonRemp.disabled = true;
 		}
-		function getRandomImage() {
-			tour++;
-			if ( tour == 2 ) {
-				const boutonSuivant = document.getElementById("suivant");
-				boutonSuivant.disabled = false;
+	</style>
+	<title> Random token </title>
+</head>
+<script>
+	var randomImage = []
+	//const path = "";
+	const path = "storage/emulated/0/Download/randomToken/";
+	var tour = 0;
+	function fillImages() {
+		randomImage = [
+			[path.concat("1.txt"), path.concat("1.png")],
+			[path.concat("1.txt"), path.concat("1.png")],
+			[path.concat("2.txt"), path.concat("2.png")],
+			[path.concat("2.txt"), path.concat("2.png")],
+			[path.concat("3.txt"), path.concat("3.png")],
+			[path.concat("3.txt"), path.concat("3.png")],
+			[path.concat("4.txt"), path.concat("4.png")],
+			[path.concat("4.txt"), path.concat("4.png")],
+			[path.concat("5.txt"), path.concat("5.png")],
+			[path.concat("6.txt"), path.concat("6.png")],
+			[path.concat("7.txt"), path.concat("7.png")],
+			[path.concat("7.txt"), path.concat("7.png")]];
+		const boutonPioche = document.getElementById("pioche");
+		if (tour < 2) { boutonPioche.disabled = false; }
+		const boutonRemp = document.getElementById("remplissage");
+		boutonRemp.disabled = true;
+	}
+	function getRandomImage() {
+		tour++;
+		if (tour == 2) {
+			const boutonSuivant = document.getElementById("suivant");
+			boutonSuivant.disabled = false;
+			const boutonPioche = document.getElementById("pioche");
+			boutonPioche.disabled = true;
+		}
+		if (randomImage.length != 0) {
+			var number = Math.floor(Math.random() * randomImage.length);
+			var element = document.getElementById("result").innerHTML = '<div>' + '<img src="' + randomImage[number][1] + '"' + 'style="width:70%"/>' + '<p> <iframe src="' + randomImage[number][0] + '"' + 'style="width:100%"/> </p>' + '</div>';
+			randomImage.splice(number, 1);
+			if (randomImage.length < 1) {
 				const boutonPioche = document.getElementById("pioche");
 				boutonPioche.disabled = true;
-			}
-			if ( randomImage.length != 0 ){
-				var number = Math.floor(Math.random()*randomImage.length);
-				var element = document.getElementById("result").innerHTML = '<div>'+'<img src="'+randomImage[number][1]+'"'+'style="width:70%"/>'+'<p> <iframe src="'+randomImage[number][0]+'"'+'style="width:100%"/> </p>'+'</div>';
-				randomImage.splice(number,1);
-				if ( randomImage.length < 1 ) {
-					const boutonPioche = document.getElementById("pioche");
-					boutonPioche.disabled = true;
-					const boutonRemp = document.getElementById("remplissage");
-					boutonRemp.disabled = false;
-				}
-				if ( randomImage.length < 1 && tour == 2) {
-					const boutonRemp = document.getElementById("remplissage");
-					boutonRemp.disabled = true;
-				}
-			return element; 
-			}
-		}
-		function allowNext() {
-			tour = 0;
-			const boutonSuivant = document.getElementById("suivant");
-			boutonSuivant.disabled = true;
-			if ( randomImage.length > 0 ) {
-				const boutonPioche = document.getElementById("pioche");
-				boutonPioche.disabled = false;
-			}
-			if ( randomImage.length < 1 ) {
 				const boutonRemp = document.getElementById("remplissage");
 				boutonRemp.disabled = false;
 			}
+			if (randomImage.length < 1 && tour == 2) {
+				const boutonRemp = document.getElementById("remplissage");
+				boutonRemp.disabled = true;
+			}
+			return element;
 		}
-	</script>
-	<body style="background: linear-gradient(#00400e, #1e1e1e);">
-		<div class="centerTop">
-			<img src="/storage/emulated/0/Download/randomToken/top.png" style="width:100%">
-		</div>
-		<div class="centerButton">
-			<button id="remplissage" onclick = "fillImages()"> Remplir </button>
-			<button disabled id="pioche" onclick = "getRandomImage()"> Piocher </button>
-			<button disabled id="suivant" onclick = "allowNext()"> Joueur suivant </button>
-		</div>
-		<div class="centerToken">
-			<span id="result"></span>
-		</div>
-	</body>
+	}
+	function allowNext() {
+		tour = 0;
+		const boutonSuivant = document.getElementById("suivant");
+		boutonSuivant.disabled = true;
+		if (randomImage.length > 0) {
+			const boutonPioche = document.getElementById("pioche");
+			boutonPioche.disabled = false;
+		}
+		if (randomImage.length < 1) {
+			const boutonRemp = document.getElementById("remplissage");
+			boutonRemp.disabled = false;
+		}
+	}
+</script>
+
+<body style="background: linear-gradient(#00400e, #1e1e1e);">
+	<div class="centerTop">
+		<img src="storage/emulated/0/Download/randomToken/top.png" style="width:100%">
+	</div>
+	<div class="centerButton">
+		<button id="remplissage" onclick="fillImages()"> Remplir </button>
+		<button disabled id="pioche" onclick="getRandomImage()"> Piocher </button>
+		<button disabled id="suivant" onclick="allowNext()"> Joueur suivant </button>
+	</div>
+	<div class="centerToken">
+		<span id="result"></span>
+	</div>
+</body>
+
 </html>
