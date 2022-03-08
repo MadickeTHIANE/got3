@@ -57,18 +57,18 @@
 	var tour = 0;
 	function fillImages() {
 		randomImage = [
-			[path.concat("1.txt"), path.concat("1.png")],
-			[path.concat("1.txt"), path.concat("1.png")],
-			[path.concat("2.txt"), path.concat("2.png")],
-			[path.concat("2.txt"), path.concat("2.png")],
-			[path.concat("3.txt"), path.concat("3.png")],
-			[path.concat("3.txt"), path.concat("3.png")],
-			[path.concat("4.txt"), path.concat("4.png")],
-			[path.concat("4.txt"), path.concat("4.png")],
-			[path.concat("5.txt"), path.concat("5.png")],
-			[path.concat("6.txt"), path.concat("6.png")],
-			[path.concat("7.txt"), path.concat("7.png")],
-			[path.concat("7.txt"), path.concat("7.png")]];
+			[path.concat("a.txt"), path.concat("a.png")],
+			[path.concat("a.txt"), path.concat("a.png")],
+			[path.concat("b.txt"), path.concat("b.png")],
+			[path.concat("b.txt"), path.concat("b.png")],
+			[path.concat("c.txt"), path.concat("c.png")],
+			[path.concat("c.txt"), path.concat("c.png")],
+			[path.concat("d.txt"), path.concat("d.png")],
+			[path.concat("d.txt"), path.concat("d.png")],
+			[path.concat("e.txt"), path.concat("e.png")],
+			[path.concat("f.txt"), path.concat("f.png")],
+			[path.concat("g.txt"), path.concat("g.png")],
+			[path.concat("g.txt"), path.concat("g.png")]];
 		const boutonPioche = document.getElementById("pioche");
 		if (tour < 2) { boutonPioche.disabled = false; }
 		const boutonRemp = document.getElementById("remplissage");
@@ -84,7 +84,7 @@
 		}
 		if (randomImage.length != 0) {
 			var number = Math.floor(Math.random() * randomImage.length);
-			var element = document.getElementById("result").innerHTML = '<div>' + '<img src="' + randomImage[number][1] + '"' + 'style="width:70%"/>' + '<p> <iframe src="' + randomImage[number][0] + '"' + 'style="width:100%"/> </p>' + '</div>';
+			var element = document.getElementById("result").innerHTML = '<div>' + '<img src="' + randomImage[number][1] + '" style="width:70% ; max-height:25vh"/>' + '<p> <iframe src="' + randomImage[number][0] + '"' + 'style="width:100%"/> </p>' + '</div>';
 			randomImage.splice(number, 1);
 			if (randomImage.length < 1) {
 				const boutonPioche = document.getElementById("pioche");
